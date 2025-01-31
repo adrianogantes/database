@@ -1,2 +1,2 @@
 # database
-a simple way to connect to a database
+a simple way to connect to mysql database
