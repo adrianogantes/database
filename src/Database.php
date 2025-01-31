@@ -21,16 +21,17 @@ class Database
   {
 
     $this->sql = $sql;
-
+ 
     $this->prepared = $this->DB->prepare($sql);
 
   }
 
-  public function exec($payload = null) {
+  public function exec(Array | Object $payload = null) {
 
     if ($payload) {
 
-      $vals = array_values(get_object_vars($payload));
+      if (is_array($payload)) $vals = array_values($payload);
+      else $vals = array_values(get_object_vars($payload));
 
     } else {
 
