@@ -1,0 +1,19 @@
+{
+    "name": "gantes/database",
+    "description": "a simple way to connect to a database",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gantes\\Database\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Adriano Gantes",
+            "email": "adrianogantes@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
