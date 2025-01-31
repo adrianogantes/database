@@ -5,24 +5,22 @@ namespace Db;
 class Database
 {
   private $DB;
-  protected $sql;
-  protected $prepared;
-  protected $index;
-  protected $tableJoin;
-  protected $tbName;
-  protected $post;
+  private $sql;
+  private $prepared;
+  private $error;
   public $data;
-  protected $error;
 
-  public function __construct($dbType)
+  public function __construct($path)
   {
 
-    $this->DB = Connect::open(LIB . 'db' . DIRECTORY_SEPARATOR . $dbType);
+    $this->DB = Conn::open($path);
 
   }
 
   public function query($sql)
   {
+
+    $this->sql = $sql;
 
     $this->prepared = $this->DB->prepare($sql);
 
@@ -55,7 +53,7 @@ class Database
   }
 
   function close() {
-    Connect::close();
+    Conn::close();
   }
 
   function getSql() {
